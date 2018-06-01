@@ -1,1 +1,5 @@
-# SAIT_Threaded_Project
+# SAIT_PROJECT
+
+SAIT OOSD 2018
+
+Threaded Project
