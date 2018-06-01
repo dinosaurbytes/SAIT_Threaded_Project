@@ -9,7 +9,18 @@
 <body>
   <div class="container">
 
-
+ <!--section:Contact-->
+  <section class="">
+  	<div class="container">
+  	  <div class="row">
+  	  	<div class="col s12 m6">
+  	  		<div class="">
+  	  			
+  	  		</div> 	  		
+  	  	</div> 	  	
+  	  </div>
+  	</div>
+  </section>
 
 
 
