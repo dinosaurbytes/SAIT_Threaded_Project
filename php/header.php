@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
   <a class="navbar-brand" href="index.php">Travel Experts</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
@@ -13,6 +14,9 @@
         </div> -->
       </li>
       <li class="nav-item dropdown">
+        <a class='nav-link' href='contact.php' id='navbarDropdown'>Packages</a>
+      </li>
+      <li class="nav-item dropdown">
         <a class='nav-link' href='contact.php' id='navbarDropdown'>Contact</a>
       </li>
       <li class="nav-item dropdown">
@@ -20,5 +24,6 @@
 
       </li>
     </ul>
+  </div>
   </div>
 </nav>
