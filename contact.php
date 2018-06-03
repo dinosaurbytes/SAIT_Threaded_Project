@@ -9,26 +9,15 @@
 <body>
   <div class="container">
 
-	<?php include "header.php"?>
-
- <!--section:Contact-->
-  <section class="">
-  	<div class="container">
-  	  <div class="row">
-  	  	<div class="col s12 m6">
-  	  		<div class="">
-
-  	  		</div>
-  	  	</div>
-  	  </div>
-  	</div>
-  </section>
-
-
+    <?php include "php/header.php"?>
 
 
 
 
   </div>
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
