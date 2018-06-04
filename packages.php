@@ -20,7 +20,7 @@
         		</div>
         	</div>
     	</div>
-	
+
 
 		<table id="myTable" style="width:100%" class="table table-hover">
   			<tr class="header">
@@ -39,11 +39,11 @@
 			    <td>$754</td>
 			    <td>2018-08-12</td>
 			    <td>Air Germany</td>
-				<td><button class='btn btn-info'>Book</button>
+				<td><button class='btn btn-info' name =1>Book</button>
 			</tr>
-		  
-		  	
-		  	
+
+
+
 		  	<tr>
 		    	<td>Venice</td>
 			    <td>Germany</td>
@@ -106,7 +106,7 @@
 			    <td>Air Germany</td>
 			    <td><button class='btn btn-info'>Book</button>
 		  	</tr>
-		</table> 
+		</table>
 
 
 
@@ -114,7 +114,7 @@
   <?php include "php/footer.php"?>
 
 <script>
-	
+
 function myFunction() {
   // Declare variables
   var input, filter, table, tr, td, i;
