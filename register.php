@@ -75,7 +75,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text" >Username:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Username" name="username" onfocus="showMessage('Maximum Length:15',this)" maxlength="15" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
+            						<input type="text" class="form-control"  name="username" onfocus="showMessage('Maximum Length:15',this)" maxlength="15" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='username' style='visibility: hidden'></div>
@@ -88,7 +88,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text" >Password:</span>
            						</div>
-            						<input type="password" class="form-control" placeholder="Password" name="password" onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
+            						<input type="password" class="form-control"  name="password" onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
           					</div>
 						</div>
 						<div class='col-sm-6' id='password' style='visibility: hidden'></div>
@@ -101,7 +101,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text" >Confirm Password:</span>
            						</div>
-            						<input type="password" class="form-control" placeholder="Confirm password" name="cPassword" onfocus="showMessage('This should match the password',this)" maxlength="15">
+            						<input type="password" class="form-control"  name="cPassword" onfocus="showMessage('This should match the password',this)" maxlength="15">
           					</div>
 						</div>
 						<div class='col-sm-6' id='cPassword' style='visibility: hidden'></div>
@@ -116,7 +116,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text">First name:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="First name" name="fname" onfocus="showMessage('Please ignore middle name',this)" maxlength="20" value="<?php if(isset($_POST['fname'])) echo $_POST['fname']; ?>">
+            						<input type="text" class="form-control" placeholder="John" name="fname" onfocus="showMessage('Please ignore middle name',this)" maxlength="20" value="<?php if(isset($_POST['fname'])) echo $_POST['fname']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='fname' style='visibility: hidden'></div>
@@ -128,7 +128,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text">Last name:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Last name" name="lname" maxlength="20" value="<?php if(isset($_POST['lname'])) echo $_POST['lname']; ?>">
+            						<input type="text" class="form-control" placeholder="Doe" name="lname" maxlength="20" value="<?php if(isset($_POST['lname'])) echo $_POST['lname']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='lname' style='visibility: hidden'></div>
@@ -140,7 +140,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text">Address:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Address" name="address" onfocus="showMessage('Street address before city',this)" value="<?php if(isset($_POST['address'])) echo $_POST['address']; ?>">
+            						<input type="text" class="form-control" placeholder="3675 32th Avenue SW" name="address" onfocus="showMessage('Street address before city',this)" value="<?php if(isset($_POST['address'])) echo $_POST['address']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='address' style='visibility: hidden'></div>
@@ -152,7 +152,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text">City:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="City" name="city" value="<?php if(isset($_POST['city'])) echo $_POST['city']; ?>">
+            						<input type="text" class="form-control" placeholder="Calgary" name="city" value="<?php if(isset($_POST['city'])) echo $_POST['city']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='city' style='visibility: hidden'></div>

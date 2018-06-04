@@ -14,7 +14,7 @@
         </div> -->
       </li>
       <li class="nav-item dropdown">
-        <a class='nav-link' href='contact.php' id='navbarDropdown'>Packages</a>
+        <a class='nav-link' href='packages.php' id='navbarDropdown'>Packages</a>
       </li>
       <li class="nav-item dropdown">
         <a class='nav-link' href='contact.php' id='navbarDropdown'>Contact</a>
