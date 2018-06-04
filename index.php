@@ -11,10 +11,11 @@
   <div class="container">
 
     <?php include "php/header.php";
+					include "php/carousel.php";
           include "php/searchAndPackage.php";
     ?>
 
-    
+
   </div>
 
 <?php include "php/footer.php"?>
