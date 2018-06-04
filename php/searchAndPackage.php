@@ -20,7 +20,7 @@
     </div>
 
     <div class='row'>
-      <span class='ml-auto'><a href='#'>See More</a></span>
+      <span class='ml-auto'><a href='packages.php'>See More</a></span>
     </div>
   <!-- Row 1 -->
     <div class="row">
