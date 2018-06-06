@@ -12,7 +12,8 @@
 
     <?php include "php/header.php";
 					include "php/carousel.php";
-          include "php/searchAndPackage.php";
+          include "php/search.php";
+          include "php/cities.php";
     ?>
 
 

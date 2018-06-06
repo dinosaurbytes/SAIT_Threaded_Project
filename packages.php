@@ -16,9 +16,13 @@
         		<div class='col-sm-8'>
           			<div class="input-group mb-3">
             			<div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">Destination:</span></div>
-            			<input type="text" class="form-control" placeholder="Search for destination" id="searchInput" onkeyup="display_destination()">
+            			<input type="text" class="form-control" placeholder="Search for destination" id="searchInput" onkeyup="display_destination()" value="<?php if (isset($_POST['Asia'])||isset($_POST['Euro'])) echo 'Asia'?>">
           			</div>
         		</div>
+        		<div class='col-sm-3'>
+        			<button onclick="display_destination()" class="btn btn-success">Search</button>
+        		</div>
+
         	</div>
     	</div>
 
