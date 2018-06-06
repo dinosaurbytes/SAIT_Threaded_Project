@@ -14,7 +14,7 @@
                 <h4 class="card-title">Venice</h4>
                 <p class="card-text">$982+</p>
                 
-                <button type="submit" name='Asia' class="btn btn-success">Find Package</button>
+                <button type="submit" name='button1' value='European' class="btn btn-success">Find Package</button>
                 
               </div>
             </div>   
@@ -23,12 +23,12 @@
 
       <div class='col-xs-12 col-md'>
         <div class='card mb-4 city' style='height:200px'>
-          <img src="image/newyork.jpg" class="image">
+          <img src="image/havana.jpg" class="image">
           <div class="overlay">
               <div class='cityText'>
-                <h4 class="card-title">New York</h4>
+                <h4 class="card-title">Havana</h4>
                 <p class="card-text">$492+</p>
-                <button type="submit" name='Euro' class="btn btn-success">Find Package</button>
+                <button type="submit" value='Caribbean' name='button2' class="btn btn-success">Find Package</button>
               </div>
             </div>   
         </div>
@@ -41,7 +41,7 @@
               <div class='cityText'>
                 <h4 class="card-title">Tokyo</h4>
                 <p class="card-text">$871+</p>
-                <a href="#" class="btn btn-success">Find Package</a>
+                <button type="submit" value='Asian' name='button3' class="btn btn-success">Find Package</button>
               </div>
             </div>   
         </div>
@@ -53,12 +53,12 @@
 
       <div class='col-xs-12 col-md'>
         <div class='card mb-4 city' style='height:200px'>
-          <img src="image/tanzania.jpg" class="image">
+          <img src="image/moscow.jpg" class="image">
           <div class="overlay">
               <div class='cityText'>
-                <h4 class="card-title">Tanzania</h4>
+                <h4 class="card-title">Moscow</h4>
                 <p class="card-text">$926+</p>
-                <a href="#" class="btn btn-success">Find Package</a>
+                <button type="submit" value='European' name='button4' class="btn btn-success">Find Package</button>
               </div>
             </div>   
         </div>
@@ -71,7 +71,7 @@
               <div class='cityText'>
                 <h4 class="card-title">Maldive</h4>
                 <p class="card-text">$893+</p>
-                <a href="#" class="btn btn-success">Find Package</a>
+                <button type="submit" value='Polynesian' name='button5' class="btn btn-success">Find Package</button>
               </div>
             </div>   
         </div>
@@ -79,12 +79,12 @@
 
       <div class='col-xs-12 col-md'>
         <div class='card mb-4 city' style='height:200px'>
-          <img src="image/rio.jpg" class="image">
+          <img src="image/bali.jpg" class="image">
           <div class="overlay">
               <div class='cityText'>
-                <h4 class="card-title">Rio De Janeiro</h4>
+                <h4 class="card-title">Bali</h4>
                 <p class="card-text">$371+</p>
-                <a href="#" class="btn btn-success">Find Package</a>
+                <button type="submit" value='Polynesian' name='button6' class="btn btn-success">Find Package</button>
               </div>
             </div>   
         </div>
