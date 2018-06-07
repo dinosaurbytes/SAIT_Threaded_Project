@@ -1,11 +1,17 @@
 <?php
 /**
-This is a php file where classes are defined
+Author: Fantastic 4 (Jason, Brian, Lindsay, Sunghyun)
 Created: 2018-06-05
+This is a php file where classes are defined
 */
 
+
 class Package
-{	public $id;
+{	/*
+	Author: Sunghyun Lee
+	*/
+
+	public $id;
 	public $name;
 	public $startDate;
 	public $endDate;
