@@ -29,7 +29,7 @@ function display_destination()
 
   // Loop through rows and loop through td's. If there is any match, display the row. Otherwise, hide.
   
-  for (var i = 0; i < rows.length; i++) 
+  for (var i = 1; i < rows.length; i++) 
   { var match = false;
     var datas = rows[i].getElementsByTagName("td");
     for (var j=0; j<datas.length;j++)

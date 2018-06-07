@@ -6,4 +6,7 @@ for ($i=1;$i<5;$i++)
 	echo $_POST['button'.$i];
 }
 
+
+
+
 ?>

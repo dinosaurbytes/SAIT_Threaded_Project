@@ -1,3 +1,11 @@
+/*
+Author: Sunghyun Lee;
+Created: 2018-06-01;
+Last Modified: 2018-06-07;
+
+*/
+
+/* add mouse hover effects to 6 cards on the index page*/
 .city {
   position: relative;
   //width: 50%;
@@ -25,7 +33,6 @@
   height: 100%;
 }
 
-
 .cityText {
   color: black;
   font-size: 20px;
@@ -35,4 +42,11 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+}
+
+/*give bold and red effect to a package start date that has already passed */
+.package-start-date
+{
+  color:red;
+  font-weight:bold;
 }
