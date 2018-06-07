@@ -12,15 +12,15 @@
     <?php  include "php/header.php"; ?>
   <!-----section:office hours informaion and message form------->
   <section>
-    <div class="row"> 
+    <div class="row">
       <div class='col-sm-12 col-md-6'>
         <div class='card mb-4 bg-light'>
           <div class='card-body'>
             <h4 class='card-title' style="color: red">CONTACT US</h4>
             <br>
             <h5 class='card-subtitle'>Office hours</h5>
-          </div>   
-          <ul >          
+          </div>
+          <ul >
               <li>Monday:&emsp;9:30am-6:00pm</li>
               <li>Tuesday:&emsp;9:30am-6:00pm</li>
               <li>Wednsay:&emsp;9:30am-6:00pm</li>
@@ -30,8 +30,8 @@
               <li>Sunday:&emsp;11:00am-5:00pm</li>
           </ul>
         </div>
-      </div>   
-       <!--------------message form----->         
+      </div>
+       <!--------------message form----->
       <div class='col-sm-12 col-md-6'>
         <div class='card mb-4'>
           <div class='card-body bg-info'>
@@ -52,18 +52,18 @@
               <input type="submit" name="submit" value="Send" class="btn btn-success btn-md" onclick="return validate(this.form)">
               <span style="color: red">&emsp;* All feild are required.</span>
             </form>
-          </div>         
+          </div>
         </div>
       </div>
     </div>
   </section>
 <!-------------section:location information-------->
   <section>
-          <div class="row">      
+          <div class="row">
             <div class='col-sm-12 col-md-6'>
               <div class='card mb-4 bg-light'>
-                <div class='card-body'>   
-                  <h6 class='card-title'>Calgary</h6> 
+                <div class='card-body'>
+                  <h6 class='card-title'>Calgary</h6>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">
                         Phone: (403)271-9873
@@ -76,16 +76,16 @@
             </div>
             <div class='col-sm-12 col-md-6'>
               <div class='card mb-4 bg-light'>
-                  <div class='card-body'>  
-                    <h6 class='card-title'>Oktoks</h6>  
-                    <ul class="list-group list-group-flush">                            
+                  <div class='card-body'>
+                    <h6 class='card-title'>Oktoks</h6>
+                    <ul class="list-group list-group-flush">
                       <li class="list-group-item">Phone: (403)563-2381</li>
                       <li class="list-group-item">Fax: (403)563-2382</li>
                       <li class="list-group-item">110 Main Street Oktoks, AB T7R 3J5</li>
-                    </ul>          
-                  </div>         
+                    </ul>
+                  </div>
               </div>
-            </div>   
+            </div>
           </div>
   </section>
 <!-----------------section:agents information---------------->
@@ -99,9 +99,9 @@
             <img class="card-img-top rounded-circle" src="" alt="Agent Photo">
             <div class='card-body text-center text-white'>
               <h6 class='card-title'>name</h6>
-              <p class="card-text">phone</p>            
+              <p class="card-text">phone</p>
               <a href="#" class='card-link'>email</a>
-            </div>         
+            </div>
           </div>
         </div>
         <div class='col-xs-6 col-sm-4 col-md-3 col-lg-2'>
@@ -109,9 +109,9 @@
             <img class="card-img-top rounded-circle" src="" alt="Agent Photo">
             <div class='card-body text-center text-white'>
               <h6 class='card-title'>name</h6>
-              <p class="card-text">phone</p>            
+              <p class="card-text">phone</p>
               <a href="#" class='card-link'>email</a>
-            </div>         
+            </div>
           </div>
         </div>
         <div class='col-xs-6 col-sm-4 col-md-3 col-lg-2'>
@@ -119,9 +119,9 @@
             <img class="card-img-top rounded-circle" src="" alt="Agent Photo">
             <div class='card-body text-center text-white'>
               <h6 class='card-title'>name</h6>
-              <p class="card-text">phone</p>            
+              <p class="card-text">phone</p>
               <a href="#" class='card-link'>email</a>
-            </div>         
+            </div>
           </div>
         </div>
         <div class='col-xs-6 col-sm-4 col-md-3 col-lg-2'>
@@ -129,9 +129,9 @@
             <img class="card-img-top rounded-circle" src="" alt="Agent Photo">
             <div class='card-body text-center text-white'>
               <h6 class='card-title'>name</h6>
-              <p class="card-text">phone</p>            
+              <p class="card-text">phone</p>
               <a href="#" class='card-link'>email</a>
-            </div>         
+            </div>
           </div>
         </div>
         <div class='col-xs-6 col-sm-4 col-md-3 col-lg-2'>
@@ -139,9 +139,9 @@
             <img class="card-img-top rounded-circle" src="" alt="Agent Photo">
             <div class='card-body text-center text-white'>
               <h6 class='card-title'>name</h6>
-              <p class="card-text">phone</p>            
+              <p class="card-text">phone</p>
               <a href="#" class='card-link'>email</a>
-            </div>         
+            </div>
           </div>
         </div>
         <div class='col-xs-6 col-sm-4 col-md-3 col-lg-2'>
@@ -149,9 +149,9 @@
             <img class="card-img-top rounded-circle" src="" alt="Agent Photo">
             <div class='card-body text-center text-white'>
               <h6 class='card-title'>name</h6>
-              <p class="card-text">phone</p>            
+              <p class="card-text">phone</p>
               <a href="#" class='card-link'>email</a>
-            </div>         
+            </div>
           </div>
         </div>
        <!------can add more agents informtion here----->
@@ -163,7 +163,7 @@
 
   <?php include "php/footer.php"; ?>
 
-  
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script>
@@ -173,7 +173,7 @@ function validate(myform)
   var patt;
     var result;
   for (var x = 0; x < myform.length; x++)
-  { 
+  {
     if (myform[x].value == "" || null)
     {
       alert ( myform[x].name + " is required.");
@@ -186,8 +186,8 @@ function validate(myform)
             result=patt.test(str.toLowerCase());
         if (!result)
       {
-        alert("please enter a correct email address."); 
-        return false; 
+        alert("please enter a correct email address.");
+        return false;
       }
     }
     else if (myform[x].name == "Phone")
@@ -197,8 +197,8 @@ function validate(myform)
             result=patt.test(str.toLowerCase());
         if (!result)
       {
-        alert("please enter a valid phone number.");  
-        return false; 
+        alert("please enter a valid phone number.");
+        return false;
       }
     }
   }
