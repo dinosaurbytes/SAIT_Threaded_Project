@@ -9,6 +9,8 @@ This is a php file where classes are defined
 class Package
 {	/*
 	Author: Sunghyun Lee
+	Created: 2018-06-05
+	Last Modified:
 	*/
 
 	public $id;
@@ -18,6 +20,7 @@ class Package
 	public $description;
 	public $basePrice;
 	public $agencyCommission;
+	
 	public function __construct($pkgId)
 	{
 		$this->id = $pkgId;
@@ -34,7 +37,36 @@ class Package
     	$myDb->close();
 
 	}
+
+	//check whether the package's start date has passed
+	public function checkStartDate()
+	{
+		$currentDate=time();
+		if ($currentDate>strtotime($this->startDate))
+		{
+			return false;
+		}
+		if ($currentDate<strtotime($this->startDate))
+		{
+			return true;
+		}
+	}
+	//check whether the package's end date has passed
+	public function checkEndDate()
+	{
+		$currentDate=time();
+		if ($currentDate>strtotime($this->endDate))
+		{
+			return false;
+		}
+		if ($currentDate<strtotime($this->endDate))
+		{
+			return true;
+		}
+	}
+
 }
+
 
 
 

@@ -1,6 +1,7 @@
 <!--
 Author: Sunghyun Lee
 Created: 2018-06-01
+Last Updated:2018-06-07 10:56 AM
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,7 @@ Created: 2018-06-01
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/SungCss.css">
 </head>
 <body onload="display_destination()">
   	<?php 
@@ -51,43 +53,77 @@ Created: 2018-06-01
       //create Package objects according to the number of rows in the database
     	for ($i=1;$i<$numRows+1;$i++)
     	{
-    		${'package'.$i} = new Package($i);
+    		${'package'.$i} = new Package($i); 
     	}
     	?>
+
     	<form action="temp.php" method="POST" id="packageForm">
-		<table id="packageTable" style="width:100%" class="table table-hover">
-  			<tr class="header">
-			    <th style="width:auto;">Package Name</th>
-			    <th style="width:auto;">Start Date</th>
-			    <th style="width:auto;">End Date</th>
-			    <th style="width:auto;">Description</th>
-			    <th style="width:auto;">Base Price</th>
-			    <th style="width:auto;">Agency Commission</th>
-			    <th style="width:auto;">Book</th>
-		  	</tr>
-		  	<?php
-        //for each row in the table, print out package information
-        //and attach an input button that will store each package's id as its value
-		  	for ($i=1;$i<$numRows+1;$i++)
-		  	{	$temp=${'package'.$i};
-		  		echo "<tr>
-		  				<td>$temp->name</td>
-		  				<td>$temp->startDate</td>
-		  				<td>$temp->endDate</td>
-		  				<td>$temp->description</td>
-		  				<td>$temp->basePrice</td>
-		  				<td>$temp->agencyCommission</td>
-		  				<td><button type='submit' name='button".$i."' value=$i class='btn btn-success'>Book</button></td>
-		  			</tr>";
-		  	}
-		  	
-		  	?>
-		  	
-		</table>
-		</form>
+  		  <table id="packageTable" style="width:100%" class="table table-hover">
+    			<tr>
+            <th>wow</th>
+            <th>wow</th>
+            <th>wow</th>
+            <th>wow</th>
+            <th>wow</th>
+            <th>wow</th>
+            <th>wow</th>
+          </tr>
 
 
-  </div>
+  		  	<?php
+          /*
+          for each row in the table, print out package information
+          and attach an input button that will store each package's id as its value
+          */
+  		  	for ($i=1;$i<$numRows+1;$i++)
+  		  	{	$temp=${'package'.$i};
+            if ($temp->checkEndDate())
+            { 
+              //reformat variables to make printing neat
+              $startDate=substr($temp->startDate,0,10);
+              $endDate=substr($temp->endDate,0,10);
+              $basePrice=round($temp->basePrice,2);
+              $agencyCommission=round($temp->agencyCommission,2);
+              //print out the package's information 
+    		  		echo "<tr>
+    		  				    <td>$temp->name</td>
+    		  				    <td "; 
+              //turn start date bold and red if it has passed
+              if (!$temp->checkStartDate())
+              {
+                echo "class='package-start-date'";
+              }
+              echo "      >$startDate</td>
+    		  				    <td>$endDate</td>
+        		  				<td>$temp->description</td>
+        		  				<td>$basePrice</td>
+        		  				<td>$agencyCommission</td>
+        		  				<td><button type='submit' name='button".$i."' value=$i class='btn btn-success' ";
+              if (!$temp->checkStartDate())
+              {
+                echo "disabled";
+              }
+              echo "      >";
+              if ($temp->checkStartDate())
+                echo "Book";
+              else 
+                echo "Expired"; 
+              echo "</button></td>
+        		  			</tr>";
+            }
+  		  	}
+  		  	
+  		  	?>
+  		  	
+  		  </table>
+		  </form>
+    </div>
+
+
+  
+    
+
+  
   <?php include "php/footer.php"?>
 
 
