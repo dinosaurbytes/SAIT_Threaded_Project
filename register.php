@@ -1,3 +1,8 @@
+<!--
+Register Page for SAIT Threaded Proejct
+Page created by Brian Liang
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,34 +28,34 @@
 </head>
 <body>
 	<?php
-		$userErr=$passErr=$cPassErr=$fnameErr=$lnameErr=$addErr=$cityErr=$pcErr='';
+		$userErr=$passErr=$cPassErr=$CustFirstNameErr=$CustLastNameErr=$addErr=$CustCityErr=$CustPostalErr='';
 		if (isset($_POST['submit']))
-		{	
+		{
 			$inputs=array(
 				'username'=>'userErr',
 				'password'=>'passErr',
 				'cPassword'=>'cPassErr',
-				'fname'=>'fnameErr',
-				'lname' => 'lnameErr',
-				'address' => 'addErr',
-				'city' =>'cityErr',
-				'pc' => 'pcErr'
+				'CustFirstName'=>'CustFirstNameErr',
+				'CustLastName' => 'CustLastNameErr',
+				'CustAddress' => 'addErr',
+				'CustCity' =>'CustCityErr',
+				'CustPostal' => 'CustPostalErr'
 				);
 			$goodToGo = true;
 			foreach ($inputs as $name => $err)
-			{	
+			{
 				if (empty($_POST[$name]))
-				{	
+				{
 					$$err = "*empty";
-					$goodToGo =false;	
+					$goodToGo =false;
 				}
 			}
-			if (!empty($_POST['pc']))
+			if (!empty($_POST['CustPostal']))
 			{
 				$reg = "/^[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d$/";
-				if(!preg_match($reg,trim($_POST['pc'])))
+				if(!preg_match($reg,trim($_POST['CustPostal'])))
 				{
-					$pcErr = 'Postal Code pattern is wrong';
+					$CustPostalErr = 'Postal Code pattern is wrong';
 					$goodToGo =false;
 				}
 			}
@@ -61,12 +66,14 @@
 					$cPassErr ='Passwords do not match';
 					$goodToGo=false;
 				}
-			}		
-		}	
+			}
+		}
 		?>
-  	<div class="container">
-    	<?php include "php/header.php"?>
-    	<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" id="register_form" >		
+		<?php include "php/header.php"?>
+
+<!-- Username and Passwor Form -->
+		<div class="container">
+    	<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" id="register_form" >
 				<fieldset>
 					<legend>User Name and Password</legend>
 					<div class='row'>
@@ -75,7 +82,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text" >Username:</span>
            						</div>
-            						<input type="text" class="form-control"  name="username" onfocus="showMessage('Maximum Length:15',this)" maxlength="15" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
+            						<input type="text" class="form-control"   onfocus="showMessage('Maximum Length:15',this)" maxlength="15" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='username' style='visibility: hidden'></div>
@@ -88,7 +95,7 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text" >Password:</span>
            						</div>
-            						<input type="password" class="form-control"  name="password" onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
+            						<input type="password" class="form-control"   onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
           					</div>
 						</div>
 						<div class='col-sm-6' id='password' style='visibility: hidden'></div>
@@ -101,13 +108,15 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text" >Confirm Password:</span>
            						</div>
-            						<input type="password" class="form-control"  name="cPassword" onfocus="showMessage('This should match the password',this)" maxlength="15">
+            						<input type="password" class="form-control"   onfocus="showMessage('This should match the password',this)" maxlength="15">
           					</div>
 						</div>
 						<div class='col-sm-6' id='cPassword' style='visibility: hidden'></div>
 					</div>
 					<span class='text-danger'><?php echo $cPassErr; ?></span>
 				</fieldset>
+
+				<!-- Personal Information Field -->
 				<fieldset>
 					<legend> Personal Information </legend>
 					<div class='row'>
@@ -116,34 +125,34 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text">First name:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="John" name="fname" onfocus="showMessage('Please ignore middle name',this)" maxlength="20" value="<?php if(isset($_POST['fname'])) echo $_POST['fname']; ?>">
+            						<input type="text" class="form-control" placeholder="John" name="CustFirstName" onfocus="showMessage('Please ignore middle name',this)" maxlength="20" value="<?php if(isset($_POST['CustFirstName'])) echo $_POST['CustFirstName']; ?>">
           					</div>
 						</div>
-						<div class='col-sm-6' id='fname' style='visibility: hidden'></div>
+						<div class='col-sm-6' id='CustFirstName' style='visibility: hidden'></div>
 					</div>
-					<span class='text-danger'><?php echo $fnameErr; ?></span>
+					<span class='text-danger'><?php echo $CustFirstNameErr; ?></span>
 					<div class='row'>
 						<div class='col-sm-6'>
 							<div class="input-group">
            						<div class="input-group-prepend">
               						<span class="input-group-text">Last name:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Doe" name="lname" maxlength="20" value="<?php if(isset($_POST['lname'])) echo $_POST['lname']; ?>">
+            						<input type="text" class="form-control" placeholder="Doe" name="CustLastName" maxlength="20" value="<?php if(isset($_POST['CustLastName'])) echo $_POST['CustLastName']; ?>">
           					</div>
 						</div>
-						<div class='col-sm-6' id='lname' style='visibility: hidden'></div>
+						<div class='col-sm-6' id='CustLastName' style='visibility: hidden'></div>
 					</div>
-					<span class='text-danger'><?php echo $lnameErr; ?></span>
+					<span class='text-danger'><?php echo $CustLastNameErr; ?></span>
 					<div class='row'>
 						<div class='col-sm-6'>
 							<div class="input-group">
            						<div class="input-group-prepend">
               						<span class="input-group-text">Address:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="3675 32th Avenue SW" name="address" onfocus="showMessage('Street address before city',this)" value="<?php if(isset($_POST['address'])) echo $_POST['address']; ?>">
+            						<input type="text" class="form-control" placeholder="3675 32th Avenue SW" name="CustAddress" onfocus="showMessage('Street Address before city',this)" value="<?php if(isset($_POST['CustAddress'])) echo $_POST['CustAddress']; ?>">
           					</div>
 						</div>
-						<div class='col-sm-6' id='address' style='visibility: hidden'></div>
+						<div class='col-sm-6' id='CustAddress' style='visibility: hidden'></div>
 					</div>
 					<span class='text-danger'><?php echo $addErr; ?></span>
 					<div class='row'>
@@ -152,20 +161,20 @@
            						<div class="input-group-prepend">
               						<span class="input-group-text">City:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Calgary" name="city" value="<?php if(isset($_POST['city'])) echo $_POST['city']; ?>">
+            						<input type="text" class="form-control" placeholder="Calgary" name="CustCity" value="<?php if(isset($_POST['CustCity'])) echo $_POST['CustCity']; ?>">
           					</div>
 						</div>
-						<div class='col-sm-6' id='city' style='visibility: hidden'></div>
+						<div class='col-sm-6' id='CustCity' style='visibility: hidden'></div>
 					</div>
-					<span class='text-danger'><?php echo $cityErr; ?></span>
+					<span class='text-danger'><?php echo $CustCityErr; ?></span>
 					<div class='row'>
 						<div class='col-sm-6'>
 							<div class="input-group">
            						<div class="input-group-prepend">
               						<span class="input-group-text">Province:</span>
            						</div>
-            						
-            					<select class='form-control' name="province"  onfocus="showMessage('If your province is not on the list, please select Else',this)" >
+
+            					<select class='form-control' name="CustProv"  onfocus="showMessage('If your Province is not on the list, please select Else',this)" >
 									<option value="ab">Alberta</option>
 									<option value="bc">British Columbia</option>
 									<option value="mb">Manitoba</option>
@@ -176,26 +185,62 @@
 									<option value="ns">Nova Scotia</option>
 									<option value="nl">Newfoundland</option>
 									<option value="else">Else</option>
-								</select>	
+								</select>
 							</div>
 						</div>
-						<div class='col-sm-6' id='province' style='visibility: hidden'></div>
+						<div class='col-sm-6' id='CustProv' style='visibility: hidden'></div>
+					</div>
+
+
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class="input-group">
+											<div class="input-group-prepend">
+													<span class="input-group-text">Postal Code:</span>
+											</div>
+												<input type="text" class="form-control" placeholder="Postal Code" name="CustPostal" onfocus="showMessage('Must match the pattern: A1A1A1',this)" maxlength="7" value="<?php if(isset($_POST['CustPostal'])) echo $_POST['CustPostal']; ?>">
+										</div>
+						</div>
+						<div class='col-sm-6' id='CustPostal' style='visibility: hidden'></div>
+					</div>
+
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class="input-group">
+           						<div class="input-group-prepend">
+              						<span class="input-group-text">Home Phone Number:</span>
+           						</div>
+            						<input type="text" class="form-control" placeholder="Home Phone Number" name="CustHomePhone" onfocus="showMessage('Must match the pattern: ##########',this)" maxlength="10" value="<?php if(isset($_POST['CustHomePhone'])) echo $_POST['CustHomePhone']; ?>">
+          					</div>
+						</div>
+						<div class='col-sm-6' id='CustHomePhone' style='visibility: hidden'></div>
 					</div>
 					<div class='row'>
 						<div class='col-sm-6'>
 							<div class="input-group">
            						<div class="input-group-prepend">
-              						<span class="input-group-text">Postal Code:</span>
+              						<span class="input-group-text">Business Phone Number:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="A1A 1A1" name="pc" onfocus="showMessage('Must match the pattern: A1A 1A1',this)" maxlength="7" value="<?php if(isset($_POST['pc'])) echo $_POST['pc']; ?>">
+            						<input type="text" class="form-control" placeholder="Business Phone Number" name="CustBusPhone" onfocus="showMessage('Must match the pattern: ##########',this)" maxlength="10" value="<?php if(isset($_POST['CustBusPhone'])) echo $_POST['CustBusPhone']; ?>">
           					</div>
 						</div>
-						<div class='col-sm-6' id='pc' style='visibility: hidden'></div>
+						<div class='col-sm-6' id='CustBusPhone' style='visibility: hidden'></div>
 					</div>
-					<span class='text-danger'><?php echo $pcErr; ?></span>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class="input-group">
+	           						<div class="input-group-prepend">
+	              						<span class="input-group-text">Email:</span>
+	           						</div>
+	            						<input type="text" class="form-control" placeholder="Email" name="CustEmail" onfocus="showMessage('Must match the pattern: example@email.com',this)" maxlength="30" value="<?php if(isset($_POST['CustEmail'])) echo $_POST['CustEmail']; ?>">
+	          					</div>
+							</div>
+							<div class='col-sm-6' id='CustEmail' style='visibility: hidden'></div>
+					</div>
+					<span class='text-danger'><?php echo $CustPostalErr; ?></span>
 				</fieldset>
-			
-				
+
+
 				<!-- submit and reset buttons -->
 				<div class='row'>
 					<div class='col-sm-6' style='text-align:center'>
@@ -203,20 +248,42 @@
 						<button class='btn btn-primary' type="reset" value="Reset" onclick="return confirm('Do you want to reset?')">Reset</button>
 					</div>
 					<div class='col-sm-6'>
+
 						<?php
-						if (isset($_POST['submit']))
-						{
-							if ($goodToGo) echo "
-							<div class='alert alert-success alert-dismissible fade show'>
-			  					<button type='button' class='close' data-dismiss='alert'>&times;</button>
-			  						<strong>Success:</strong> Your request has been processed.
-			  				</div>";
-							else echo "
-							<div class='alert alert-danger alert-dismissible fade show'>
-			  					<button type='button' class='close' data-dismiss='alert'>&times;</button>
-			  						<strong>Failed:</strong> Your request cannot be processed.
-			  				</div>";
-			  			}
+
+						require_once("php/customerRegister.php");
+
+						// if (isset($_POST['submit']))
+						// {
+						// 	if ($goodToGo){
+						//   $custArray = array();
+  					// 	foreach($_POST as $key=>$value){
+  					// 		if($key != "submit"){
+  					// 		$custArray[$key] = $value;
+						// 	  }
+						// 	  else{}
+						// 	  }
+						// 	}
+						// 	print_r($custArray);
+						// }
+					if(isset($_POST["submit"])){
+							customerRegister();
+						}
+						// }
+
+							// echo "
+							// <div class='alert alert-success alert-dismissible fade show'>
+			  			// 		<button type='button' class='close' data-dismiss='alert'>&times;</button>
+			  			// 			<strong>Success:</strong> Your request has been processed.
+			  			// 	</div>";
+
+							// else echo "
+							// <div class='alert alert-danger alert-dismissible fade show'>
+			  			// 		<button type='button' class='close' data-dismiss='alert'>&times;</button>
+			  			// 			<strong>Failed:</strong> Your request cannot be processed.
+			  			// 	</div>";
+
+
 			  			?>
 					</div>
 				</div>
@@ -227,7 +294,7 @@
 				for (i=0;i<register_array.length; i++)
 				{	var el=register_array[i];
 					if (el.tagName=='INPUT' || el.tagName=='SELECT')
-						el.setAttribute('onblur', "hideMessage(this)");			
+						el.setAttribute('onblur', "hideMessage(this)");
 				}
 	</script>
 	<?php include "php/footer.php"?>
