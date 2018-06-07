@@ -57,16 +57,16 @@ Last Updated:2018-06-07 10:56 AM
     	}
     	?>
 
-    	<form action="temp.php" method="POST" id="packageForm">
+    	<form action="orders.php" method="POST" id="packageForm">
   		  <table id="packageTable" style="width:100%" class="table table-hover">
     			<tr>
-            <th>wow</th>
-            <th>wow</th>
-            <th>wow</th>
-            <th>wow</th>
-            <th>wow</th>
-            <th>wow</th>
-            <th>wow</th>
+            <th>Package Name</th>
+            <th>Start Date</th>
+            <th>End date</th>
+            <th>Description</th>
+            <th>Base Price</th>
+            <th>Agency Commission</th>
+            <th>Book</th>
           </tr>
 
 
@@ -82,8 +82,10 @@ Last Updated:2018-06-07 10:56 AM
               //reformat variables to make printing neat
               $startDate=substr($temp->startDate,0,10);
               $endDate=substr($temp->endDate,0,10);
-              $basePrice=round($temp->basePrice,2);
-              $agencyCommission=round($temp->agencyCommission,2);
+              $basePrice= (float) $temp->basePrice;
+              $agencyCommission=(float)$temp->agencyCommission;
+              $basePrice=round($basePrice,2);
+              $agencyCommission=round($agencyCommission,2);
               //print out the package's information 
     		  		echo "<tr>
     		  				    <td>$temp->name</td>
@@ -96,16 +98,18 @@ Last Updated:2018-06-07 10:56 AM
               echo "      >$startDate</td>
     		  				    <td>$endDate</td>
         		  				<td>$temp->description</td>
-        		  				<td>$basePrice</td>
-        		  				<td>$agencyCommission</td>
+        		  				<td>\$$basePrice</td>
+        		  				<td>\$$agencyCommission</td>
         		  				<td><button type='submit' name='button".$i."' value=$i class='btn btn-success' ";
+              //turn the button disabled if the start date has passed
               if (!$temp->checkStartDate())
               {
                 echo "disabled";
               }
               echo "      >";
+              //if the start date has passed, the button says Expired. Otherwise, Book
               if ($temp->checkStartDate())
-                echo "Book";
+                echo "Order";
               else 
                 echo "Expired"; 
               echo "</button></td>

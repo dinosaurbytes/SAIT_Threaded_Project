@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="css/SungCss.css">
 </head>
 <body>
+  <?php include "php/header.php"; ?>
   <div class="container">
 
-    <?php include "php/header.php";
+    <?php
 					include "php/carousel.php";
           include "php/search.php";
           include "php/cities.php";
