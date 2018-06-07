@@ -1,0 +1,50 @@
+<!-- Script to insert customer information from the register form to the customer table in the SQL database -->
+
+<?php
+function customerRegister(){
+
+  if (isset($_POST['submit']))
+  {
+    $custArray = array();
+    foreach($_POST as $key=>$value){
+      if($key != "submit"){
+      $custArray[$key] = $value;
+      }
+      else{}
+      }
+    }
+
+    // Returns the array values as a string
+    $returnString = "'".implode("','", $custArray)."'";
+
+
+    // Returns the array keys as a string
+    $keyArray = array_keys($custArray);
+    $returnKeys = implode(",", $keyArray);
+
+    // echo $returnString;
+    // echo $returnKeys;
+
+
+
+
+
+$link = mysqli_connect("localhost", "root", "", "travelexperts") or die("Connection Error: " . mysqli_connect_error());
+
+$sql = "insert into customers ($returnKeys) values ($returnString)";
+$result = mysqli_query($link, $sql) or die("SQL Error");
+// print("result=$result<br />");
+if ($result)
+{
+  print("Customer Registered");
+}
+else
+{
+  print("Customer Not Registered");
+}
+mysqli_close($link);
+}
+
+
+
+ ?>
