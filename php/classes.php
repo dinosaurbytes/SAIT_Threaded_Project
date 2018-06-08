@@ -10,7 +10,7 @@ class Package
 {	/*
 	Author: Sunghyun Lee
 	Created: 2018-06-05
-	Last Modified:
+	Last Modified: 2018-06-08
 	*/
 
 	public $id;
@@ -20,11 +20,13 @@ class Package
 	public $description;
 	public $basePrice;
 	public $agencyCommission;
-	
+	//public $productSupplierIds=array();
+
 	public function __construct($pkgId)
 	{
 		$this->id = $pkgId;
 		$myDb = new mysqli('localhost', 'root', '','travelexperts');
+		//get data from packages table
     	$sql = "SELECT PkgName,PkgStartDate, PkgEndDate,PkgDesc, PkgBasePrice, PkgAgencyCommission FROM packages WHERE PackageId = $pkgId";
     	$result=$myDb->query($sql);
     	$row = $result->fetch_row();
@@ -34,6 +36,10 @@ class Package
     	$this->description=$row[3];
     	$this->basePrice=$row[4];
     	$this->agencyCommission=$row[5];
+    	//get data from packages table
+    	
+
+
     	$myDb->close();
 
 	}
