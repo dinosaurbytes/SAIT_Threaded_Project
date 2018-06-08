@@ -12,7 +12,7 @@ Last Updated:2018-06-07
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/SungCss.css">
+  <link rel="stylesheet" href="css/CustomCSS.css">
 </head>
 <body onload="display_destination()">
   	<?php 
