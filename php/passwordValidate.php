@@ -44,9 +44,9 @@ if(isset($_POST['Login']))
   for ($i = 0; $i<(sizeof($datas)); $i++){
     if($datas[$i]["Username"] == $loginUsernameInput and $datas[$i]["Password"] == $loginPasswordInput){
         $isMatch = true;
-        session_start();
+        
         $_SESSION["Username"] = $loginUsernameInput;
-        echo '<script type="text/javascript"> window.open("index.php"); </script>';
+        echo '<script type="text/javascript"> window.open("packages.php"); </script>';
       }
       else $isMatch = false;
     }

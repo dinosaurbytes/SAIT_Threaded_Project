@@ -1,94 +1,46 @@
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-  <link type="text/css" rel="stylesheet" href="css/main.css" />
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Materialize Theme</title>
-</head>
-
-<body id="home" class="scrollspy">
-
-  <!-- Section: Slider -->
-  <section class="slider">
-    <ul class="slides">
-      <li>
-        <img src="image/1.jpg" alt="">
-        <div class="caption center-align">
-          <h2>Take Your Dream Vacation</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Text1</h5>
-          <a href="#" class="btn btn-large">Learn More</a>
-        </div>
-      </li>
-      <li>
-        <img src="image/2.jpg" alt="">
-        <div class="caption left-align">
-          <h2>We Work With All Budgets</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Text2</h5>
-          <a href="#" class="btn btn-large">Learn More</a>
-        </div>
-      </li>
-      <li>
-        <img src="image/3.jpg" alt="">
-        <div class="caption right-align">
-          <h2>Group & Individual Getaways</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Text3</h5>
-          <a href="#" class="btn btn-large">Learn More</a>
-        </div>
-      </li>
-    </ul>
-  </section>
 
 
+<div id="demo" class="carousel slide" data-ride="carousel" style='height:400px;'>
 
+  <!-- Indicators 
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  -->
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="image/2.jpg" class='image'>
+      <div class="carousel-caption" style="top:30%;bottom:auto">
+        <h3>Take Your Dream Vacation</h3>
+        <p>Is this working?</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="image/maldive.jpg" class='image'>
+      <div class="carousel-caption" style="top:30%;bottom:auto">
+        <h3>We Work With All Budgets</h3>
+        <p>cool?</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="image/bgimg.jpeg" class='image'>
+      <div class="carousel-caption" style="top:30%;bottom:auto">
+        <h3Group & Individual Getaways</h3>
+        <p>cool?</p>
+      </div>
+    </div>
+  </div>
 
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 
-
-
-
-
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Init Side nav
-      $('.button-collapse').sideNav();
-
-      // Init Slider
-      $('.slider').slider({
-        indicators: false,
-        height: 500,
-        transition: 500,
-        interval: 6000
-      });
-
-      // Autocomplete
-      $('.autocomplete').autocomplete({
-        data: {
-          "Aruba": null,
-          "Cancun Mexico": null,
-          "Hawaii": null,
-          "Florida": null,
-          "California": null,
-          "Jamaica": null,
-          "Europe": null,
-          "The Bahamas": null,
-        }
-      });
-
-      // Init Scrollspy
-      $('.scrollspy').scrollSpy();
-
-    });
-  </script>
-</body>
-
-</html>
+</div>

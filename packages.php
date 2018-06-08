@@ -12,7 +12,7 @@ Last Updated:2018-06-07
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/SungCss.css">
+  <link rel="stylesheet" href="css/CustomCSS.css">
 </head>
 <body onload="display_destination()">
   	<?php 
@@ -59,7 +59,7 @@ Last Updated:2018-06-07
     	}
     	?>
 
-    	<form action="<?php if(isset($_SESSION['username'])) echo 'orders.php'; else echo 'login.php'; ?>" method="POST" id="packageForm">
+    	<form action="<?php if(isset($_SESSION['Username'])) echo 'orders.php'; else echo 'login.php'; ?>" method="POST" id="packageForm">
   		  <table id="packageTable" style="width:100%" class="table table-hover table-borderless text-center">
     			<tr>
             <th>Package Name</th>
@@ -123,7 +123,9 @@ Last Updated:2018-06-07
   		  </table>
 		  </form>
     </div>    
-  <?php include "php/footer.php"?>
+  <?php include "php/footer.php";
+  echo $_SESSION['Username'];
+  ?>
 
 
 <script src="js/JSfunctions.js"></script>
