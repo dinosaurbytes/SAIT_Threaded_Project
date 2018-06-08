@@ -28,7 +28,7 @@ function customerRegister(){
 
 
 
-
+//Script to redirect you to the Login Page
 $link = mysqli_connect("localhost", "root", "", "travelexperts") or die("Connection Error: " . mysqli_connect_error());
 
 $sql = "insert into customers ($returnKeys) values ($returnString)";
@@ -36,7 +36,7 @@ $result = mysqli_query($link, $sql) or die("SQL Error");
 // print("result=$result<br />");
 if ($result)
 {
-  print("Customer Registered");
+  echo '<script type="text/javascript"> window.open("login.php"); </script>';
 }
 else
 {

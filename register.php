@@ -88,7 +88,7 @@ Page created by Brian Liang
            						<div class="input-group-prepend">
               						<span class="input-group-text span-width-register" >Username:</span>
            						</div>
-            						<input type="text" class="form-control"   onfocus="showMessage('Maximum Length:15',this)" maxlength="15" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
+            						<input type="text" class="form-control" name="Username"  onfocus="showMessage('Maximum Length:15',this)" maxlength="15" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='username' style='visibility: hidden'></div>
@@ -101,7 +101,7 @@ Page created by Brian Liang
            						<div class="input-group-prepend">
               						<span class=" label input-group-text span-width-register" >Password:</span>
            						</div>
-            						<input type="password" class="form-control"   onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
+            						<input type="password" class="form-control" name="Password"  onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
           					</div>
 						</div>
 						<div class='col-sm-6' id='password' style='visibility: hidden'></div>
@@ -114,7 +114,7 @@ Page created by Brian Liang
            						<div class="input-group-prepend">
               						<span class="input-group-text span-width-register" >Confirm Password:</span>
            						</div>
-            						<input type="password" class="form-control"   onfocus="showMessage('This should match the password',this)" maxlength="15">
+            						<input type="password" class="form-control" name="cPassword"  onfocus="showMessage('This should match the password',this)" maxlength="15">
           					</div>
 						</div>
 						<div class='col-sm-6' id='cPassword' style='visibility: hidden'></div>
@@ -259,19 +259,6 @@ Page created by Brian Liang
 
 						require_once("php/customerRegister.php");
 
-						// if (isset($_POST['submit']))
-						// {
-						// 	if ($goodToGo){
-						//   $custArray = array();
-  					// 	foreach($_POST as $key=>$value){
-  					// 		if($key != "submit"){
-  					// 		$custArray[$key] = $value;
-						// 	  }
-						// 	  else{}
-						// 	  }
-						// 	}
-						// 	print_r($custArray);
-						// }
 					if(isset($_POST["submit"])){
 							customerRegister();
 						}
