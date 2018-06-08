@@ -2,7 +2,7 @@
 Login Page for SAIT Threaded Proejct
 Page created by Brian Liang
  -->
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +30,37 @@ Page created by Brian Liang
 </head>
 <body>
   <?php include "php/header.php"?>
+
+	<!-- If Session is active don't show this page -->
+	<?php
+	if(isset($_SESSION["Username"])){
+    if (session_status() == PHP_SESSION_ACTIVE) {}
+      // echo 'Session is active <br>';}
+      // echo "User Name = " . $_SESSION["Username"] . "<br>";?>
+	<section>
+		<div class="card" style="background-color: skyblue; height: 39rem;">
+			<div class="row" style="height: 2rem;"></div>
+				<div class="row">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-9">
+					<legend class='text-white'>Would you like to Logout?</legend>
+			<form action="php/logout.php">
+				<button class='btn btn-success' type="submit" name='Logout' value="Logut" > Logout </button>
+			        <!-- <input type="submit" value="Logout" /> -->
+			 </form>
+
+		 </div>
+		 <div class="col-sm-1"></div>
+</div>
+</div>
+	 </section>
+
+	<?php
+
+	  }
+	  else {
+
+  ?>
 
   <?php
     $userErr=$passErr=$cPassErr=$CustFirstNameErr=$CustLastNameErr=$addErr=$CustCityErr=$CustPostalErr='';
@@ -132,8 +163,12 @@ if(isset($_POST["Login"])){
     echo "Username or Password is Empty";
   }
 }
-
-
  ?>
+
+
+<!-- Close the Else statement for the session -->
+ <?php
+  }
+?>
 
 <?php include "php/footer.php"?>

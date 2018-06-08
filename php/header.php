@@ -20,7 +20,7 @@
         <a class='nav-link' href='contact.php' id='navbarDropdown'>Contact</a>
       </li>
       <li class="nav-item dropdown">
-        <a class='nav-link' href='login.php' id='navbarDropdown'>Login</a>
+        <a class='nav-link' href='login.php' id='navbarDropdown'>Login/Logout</a>
 
       </li>
     </ul>
