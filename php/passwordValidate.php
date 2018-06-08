@@ -12,8 +12,8 @@ function passwordValidate(){
 
   $loginUsernameInput = $loginArray["Username"];
   $loginPasswordInput = $loginArray["Password"];
-  print_r($loginUsernameInput);
-  print_r($loginPasswordInput);
+  // print_r($loginUsernameInput);
+  // print_r($loginPasswordInput);
   //Server Side Username/Password Array
   //Connect To database
   $link = mysqli_connect("localhost", "root", "", "travelexperts") or die("Connection Error: " . mysqli_connect_error());
@@ -31,7 +31,7 @@ function passwordValidate(){
   // print_r($datas);
 
   mysqli_close($link);
-  print_r($datas[0]['Username']);
+  // print_r($datas[0]['Username']);
 
 
 
@@ -44,14 +44,16 @@ if(isset($_POST['Login']))
   for ($i = 0; $i<(sizeof($datas)); $i++){
     if($datas[$i]["Username"] == $loginUsernameInput and $datas[$i]["Password"] == $loginPasswordInput){
         $isMatch = true;
-        
+
         $_SESSION["Username"] = $loginUsernameInput;
-        echo '<script type="text/javascript"> window.open("packages.php"); </script>';
+        // header("Location: http://localhost/SAIT_Threaded_Project/packages.php");
+        echo '<script type="text/javascript"> location.href = "packages.php"; </script>';
+        break;
       }
       else $isMatch = false;
     }
   if ($isMatch == false) {
-    echo "<script type='text/javascript'>alert('Invalid Username or Password');</script>";
+    echo "Invalid Username or Password";
   }
 }
 

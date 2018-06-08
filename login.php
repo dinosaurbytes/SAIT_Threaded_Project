@@ -40,7 +40,7 @@ Page created by Brian Liang
       // echo 'Session is active <br>';}
       // echo "User Name = " . $_SESSION["Username"] . "<br>";?>
 	<section>
-		<div class="card" style="background-color: skyblue; height: 39rem;">
+		<div class="card" style="background-color: skyblue; height: 32rem;">
 			<div class="row" style="height: 2rem;"></div>
 				<div class="row">
 					<div class="col-sm-1"></div>
@@ -69,8 +69,8 @@ Page created by Brian Liang
     if (isset($_POST['submit']))
     {
       $inputs=array(
-        'username'=>'userErr',
-        'password'=>'passErr',
+        'Username'=>'userErr',
+        'Password'=>'passErr',
         'cPassword'=>'cPassErr',
         'CustFirstName'=>'CustFirstNameErr',
         'CustLastName' => 'CustLastNameErr',
@@ -107,7 +107,7 @@ Page created by Brian Liang
     }
     ?>
     <section>
-      <div class="card" style="background-color: skyblue; height: 39rem;">
+      <div class="card" style="background-color: skyblue; height: 32rem;">
         <div class="row" style="height: 2rem;"></div>
         <div class="row">
           <div class="col-sm-1"></div>
