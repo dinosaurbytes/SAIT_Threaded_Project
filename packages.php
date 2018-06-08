@@ -30,19 +30,20 @@ Last Updated:2018-06-07
       $searchItem=$_POST['searchField'];
     }
   	?>
-  	<div class="container">
     <!-- area for search input -->
-		<div class='jumbotron' style='background-color:skyblue'>
-			<div class='row'>
-        		<div class='col-sm-1'></div>
-        		<div class='col-sm-8'>
-          			<div class="input-group mb-3">
-            			<div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">Search :</span></div>
-            			<input type="text" class="form-control" placeholder="package name, continent, price, product etc." id="searchInput" onkeyup="display_destination()" value="<?php echo $searchItem; ?>" >
-          			</div>
-        		</div>
-        	</div>
-    	</div>
+    <div class='jumbotron' style='background-color:skyblue'>
+      <div class='row'>
+        <div class='col-sm-1'></div>
+        <div class='col-sm-8'>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1">Search :</span></div>
+              <input type="text" class="form-control" placeholder="package name, continent, price, product etc." id="searchInput" onkeyup="display_destination()" value="<?php echo $searchItem; ?>" >
+            </div>
+        </div>
+      </div>
+    </div>
+  	<div class="container">
+    
 
     	<?php 
     	include 'php/classes.php';
@@ -123,9 +124,7 @@ Last Updated:2018-06-07
   		  </table>
 		  </form>
     </div>    
-  <?php include "php/footer.php";
-  echo $_SESSION['Username'];
-  ?>
+  <?php include "php/footer.php";?>
 
 
 <script src="js/JSfunctions.js"></script>
