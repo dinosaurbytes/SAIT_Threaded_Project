@@ -2,7 +2,7 @@
 Login Page for SAIT Threaded Proejct
 Page created by Brian Liang
  -->
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
