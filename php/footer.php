@@ -1,29 +1,59 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
 <!-- Footer -->
-<footer class="page-footer bg-dark">
+<footer class="page-footer font-small bg-dark pt-4 mt-4 ">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
     <!-- Grid row -->
-    <div class="row d-flex align-items-center">
+    <div class="row">
+
       <!-- Grid column -->
-      <div class="col-md-8 col-lg-8">
-        <!--Copyright-->
-        <p class="text-center text-md-left">© 2018 Copyright: <strong> TravelExperts.com</strong></p>
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Travel Experts</h5>
+        <p>Find your dream destination.</p>
+
       </div>
       <!-- Grid column -->
-      <div class="col-md-4 col-lg-4 ml-lg-0">
-        <!-- Social buttons -->
-        <div class="">
-          <ul class="list-unstyled list-inline">
-            <li class="list-inline-item"><a class=""><i class="fab fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a class=""><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a class=""><i class="fab fa-google-plus"></i></a></li>
-            <li class="list-inline-item"><a class=""><i class="fab fa-linkedin"></i></a></li>
-          </ul>
-        </div>
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="index.php">Home</a>
+          </li>
+          <li>
+            <a href="packages.php">Vacation Packages</a>
+          </li>
+          <li>
+            <a href="contact.php">Contact</a>
+          </li>
+          <li>
+            <a href="register.php">Register</a>
+          </li>
+        </ul>
+
       </div>
       <!-- Grid column -->
+
     </div>
     <!-- Grid row -->
+
   </div>
   <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Travel Experts:
+  </div>
+  <!-- Copyright -->
+
 </footer>
 <!-- Footer -->
