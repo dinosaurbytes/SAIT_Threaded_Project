@@ -11,6 +11,7 @@ Page created by Brian Liang
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/brianCss.css">
+	<?php include 'php/passwordValidate.php';?>
 
 	<script>
   function showMessage(message,el)
@@ -62,9 +63,9 @@ Page created by Brian Liang
           $goodToGo =false;
         }
       }
-      if (!empty($_POST['password'])&&!empty($_POST['cPassword']))
+      if (!empty($_POST['Password'])&&!empty($_POST['cPassword']))
       {
-        if ($_POST['password']!=$_POST['cPassword'])
+        if ($_POST['Password']!=$_POST['cPassword'])
         {
           $cPassErr ='Passwords do not match';
           $goodToGo=false;
@@ -73,7 +74,7 @@ Page created by Brian Liang
     }
     ?>
     <section>
-      <div class="card" style="background-color: skyblue; height: 30rem;">
+      <div class="card" style="background-color: skyblue; height: 39rem;">
         <div class="row" style="height: 2rem;"></div>
         <div class="row">
           <div class="col-sm-1"></div>
@@ -87,7 +88,7 @@ Page created by Brian Liang
                             <div class="input-group-prepend">
                                 <span class="input-group-text span-width" >Username:</span>
                             </div>
-                              <input type="text" class="form-control"   onfocus="showMessage('Maximum Length:15',this)" maxlength="15" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
+                              <input type="text" class="form-control" name="Username"  onfocus="showMessage('Maximum Length:15',this)" maxlength="15">
                           </div>
                   </div>
                   <div class='col-sm-6' id='username' style='visibility: hidden'></div>
@@ -100,7 +101,7 @@ Page created by Brian Liang
                             <div class="input-group-prepend">
                                 <span class=" label input-group-text span-width" >Password:</span>
                             </div>
-                              <input type="password" class="form-control"   onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
+                              <input type="password" class="form-control" name="Password"  onfocus="showMessage('Maximum Length:15',this)" maxlength="15" >
                           </div>
                   </div>
                   </div>
@@ -118,8 +119,21 @@ Page created by Brian Liang
           </div>
           <div class="col-sm-2"></div>
         </div>
-
-
 </div>
 </section>
+
+<!-- Validate Script for Login -->
+<?php
+if(isset($_POST["Login"])){
+  if (!empty($_POST["Username"] && !empty($_POST["Password"]))){
+    passwordValidate();
+  }
+  else{
+    echo "Username or Password is Empty";
+  }
+}
+
+
+ ?>
+
 <?php include "php/footer.php"?>
