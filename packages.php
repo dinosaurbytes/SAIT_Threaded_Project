@@ -69,6 +69,7 @@ Last Updated:2018-06-07
             <th>Description</th>
             <th>Base Price</th>
             <th>Agency Commission</th>
+            <th>Products</th>
             <th>Book</th>
           </tr>
 
@@ -89,6 +90,7 @@ Last Updated:2018-06-07
                 $agencyCommission=(float)$temp->agencyCommission;
                 $basePrice=round($basePrice,2);
                 $agencyCommission=round($agencyCommission,2);
+                $products = implode(", ",${'package'.$i}->productNames);
                 //print out the package's information 
                 echo "<tr>
                         <td>$temp->name</td>
@@ -103,6 +105,7 @@ Last Updated:2018-06-07
                         <td>$temp->description</td>
                         <td>\$$basePrice</td>
                         <td>\$$agencyCommission</td>
+                        <td>$products</td>
                         <td><button type='submit' name='button".$i."' value=$i class='btn btn-success' ";
                 //turn the button disabled if the start date has passed
                 if (!$temp->checkStartDate())
