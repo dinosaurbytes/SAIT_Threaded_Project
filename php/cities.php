@@ -1,6 +1,9 @@
 <!--
+cities.php for SAIT Project.
+Display 6 cards on the main page.
 Author: Sunghyun Lee
 Created: 2018-06-01
+Last Modified: 2018-06-07
 -->
 
     <div class='row'>

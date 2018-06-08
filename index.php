@@ -1,3 +1,10 @@
+<!--
+Main Page for SAIT Project
+Author: Fantastic 4 (Brian, Jason, Lindsay, and Sunghyun)
+Created: 2018-06-01
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +19,7 @@
   <div class="container">
 
     <?php
-					include "php/carousel.php";
+					
           include "php/search.php";
           include "php/cities.php";
     ?>

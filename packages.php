@@ -1,8 +1,10 @@
 <!--
+Packages page for SAIT Project
 Author: Sunghyun Lee
 Created: 2018-06-01
-Last Updated:2018-06-07 10:56 AM
+Last Updated:2018-06-07
 -->
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,8 +59,8 @@ Last Updated:2018-06-07 10:56 AM
     	}
     	?>
 
-    	<form action="orders.php" method="POST" id="packageForm">
-  		  <table id="packageTable" style="width:100%" class="table table-hover">
+    	<form action="<?php if(isset($_SESSION['username'])) echo 'orders.php'; else echo 'login.php'; ?>" method="POST" id="packageForm">
+  		  <table id="packageTable" style="width:100%" class="table table-hover table-borderless text-center">
     			<tr>
             <th>Package Name</th>
             <th>Start Date</th>
@@ -72,62 +74,55 @@ Last Updated:2018-06-07 10:56 AM
 
   		  	<?php
           /*
-          for each row in the table, print out package information
+          For each row in the table, print out package information
           and attach an input button that will store each package's id as its value
           */
-  		  	for ($i=1;$i<$numRows+1;$i++)
-  		  	{	$temp=${'package'.$i};
-            if ($temp->checkEndDate())
-            { 
-              //reformat variables to make printing neat
-              $startDate=substr($temp->startDate,0,10);
-              $endDate=substr($temp->endDate,0,10);
-              $basePrice= (float) $temp->basePrice;
-              $agencyCommission=(float)$temp->agencyCommission;
-              $basePrice=round($basePrice,2);
-              $agencyCommission=round($agencyCommission,2);
-              //print out the package's information 
-    		  		echo "<tr>
-    		  				    <td>$temp->name</td>
-    		  				    <td "; 
-              //turn start date bold and red if it has passed
-              if (!$temp->checkStartDate())
-              {
-                echo "class='package-start-date'";
+          for ($i=1;$i<$numRows+1;$i++)
+            { $temp=${'package'.$i};
+              if ($temp->checkEndDate())
+              { 
+                //reformat variables to make printing neat
+                $startDate=substr($temp->startDate,0,10);
+                $endDate=substr($temp->endDate,0,10);
+                $basePrice= (float) $temp->basePrice;
+                $agencyCommission=(float)$temp->agencyCommission;
+                $basePrice=round($basePrice,2);
+                $agencyCommission=round($agencyCommission,2);
+                //print out the package's information 
+                echo "<tr>
+                        <td>$temp->name</td>
+                        <td "; 
+                //turn start date bold and red if it has passed
+                if (!$temp->checkStartDate())
+                {
+                  echo "class='font-weight-bold text-danger '";
+                }
+                echo "      >$startDate</td>
+                        <td>$endDate</td>
+                        <td>$temp->description</td>
+                        <td>\$$basePrice</td>
+                        <td>\$$agencyCommission</td>
+                        <td><button type='submit' name='button".$i."' value=$i class='btn btn-success' ";
+                //turn the button disabled if the start date has passed
+                if (!$temp->checkStartDate())
+                {
+                  echo "disabled";
+                }
+                echo "      >";
+                //if the start date has passed, the button says Expired. Otherwise, Book
+                if ($temp->checkStartDate())
+                  echo "Order";
+                else 
+                  echo "Expired"; 
+                echo "</button></td>
+                      </tr>";
               }
-              echo "      >$startDate</td>
-    		  				    <td>$endDate</td>
-        		  				<td>$temp->description</td>
-        		  				<td>\$$basePrice</td>
-        		  				<td>\$$agencyCommission</td>
-        		  				<td><button type='submit' name='button".$i."' value=$i class='btn btn-success' ";
-              //turn the button disabled if the start date has passed
-              if (!$temp->checkStartDate())
-              {
-                echo "disabled";
-              }
-              echo "      >";
-              //if the start date has passed, the button says Expired. Otherwise, Book
-              if ($temp->checkStartDate())
-                echo "Order";
-              else 
-                echo "Expired"; 
-              echo "</button></td>
-        		  			</tr>";
-            }
-  		  	}
-  		  	
+            }		  	
   		  	?>
   		  	
   		  </table>
 		  </form>
-    </div>
-
-
-  
-    
-
-  
+    </div>    
   <?php include "php/footer.php"?>
 
 
