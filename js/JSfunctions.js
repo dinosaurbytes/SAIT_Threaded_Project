@@ -45,3 +45,44 @@ function display_destination()
   }
   // end of for loop
 }
+
+//------This function is to validate the message form of contact page.
+function valContact(myform)
+{   var str;
+    var patt;
+    var result;
+    var error;
+  for (var x = 0; x < myform.length; x++)
+  {
+    if (myform[x].value == "" || null)
+    {
+      error= 'Note: '+ myform[x].name + ' is required.';
+      document.getElementById('error').innerHTML=error;
+      return false;
+    }
+    else if (myform[x].name == "Email")
+    {
+      str=myform[x].value;
+      patt = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            result=patt.test(str.toLowerCase());
+        if (!result)
+      {
+        error="Note: Please enter a correct email address.";
+        document.getElementById('error').innerHTML=error;
+        return false;
+      }
+    }
+    else if (myform[x].name == "Phone")
+    {
+      str=(myform[x].value).replace(/\D/g, "");
+      patt =/^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+            result=patt.test(str.toLowerCase());
+        if (!result)
+      {
+        error="Note: Please enter a valid phone number.";
+        document.getElementById('error').innerHTML=error;
+        return false;
+      }
+    }
+  }
+}
