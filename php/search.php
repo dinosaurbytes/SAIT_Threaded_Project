@@ -1,8 +1,8 @@
 <form action="packages.php" method="POST">  
   <div class='jumbotron' style='background-color:skyblue'>
     <div class='row'>
-        <div class='col-sm-1'></div>
-        <div class='col-sm-8'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-7'>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Destination:</span>
