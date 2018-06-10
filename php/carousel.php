@@ -1,4 +1,8 @@
-
+<!--
+Author: Jason McIntyre
+Created: 2018-06-08
+Last Modified: 2018-06-08
+<-->
 
 
 <div id="demo" class="carousel slide" data-ride="carousel" style='height:400px;'>
