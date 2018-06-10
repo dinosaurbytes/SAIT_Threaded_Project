@@ -1,18 +1,15 @@
 <?php
 /**
+PHP file where classes are created for SAIT Project
 Author: Fantastic 4 (Jason, Brian, Lindsay, Sunghyun)
 Created: 2018-06-05
-This is a php file where classes are defined
+Last Modified: 2018-06-08
+
 */
 
-
+//===============Sunghyun Lee===================================
 class Package
-{	/*
-	Author: Sunghyun Lee
-	Created: 2018-06-05
-	Last Modified: 2018-06-08
-	*/
-
+{	
 	public $id;
 	public $name;
 	public $startDate;
@@ -95,7 +92,7 @@ class Package
 	}
 
 }
-
+//===================================================
 
 
 
