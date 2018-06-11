@@ -35,7 +35,7 @@ function sendemail()
   $mail->SetFrom($from,$name);
   $mail->Subject='Customer Message';
   $mail->Body=$message;
-  $mail->AddAddress('lingyanlly@hotmail.com');
+  $mail->AddAddress('sungcalgary@gmail.com');
   //send email
   $mail->Send();
   if(!$mail->send()) 
