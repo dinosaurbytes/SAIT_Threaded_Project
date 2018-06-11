@@ -78,7 +78,7 @@ Page created by Jason McIntyre
 			<div class="col-sm-1"></div>
 			<div class="col-sm-9">
 <!-- Calling on insert.php file to connect to the Travelexperts Database and submit data to it. -->
-  <form action="insert.php" method="post" id="register_form">
+  <form action="insert.php", method="post" id="register_form">
 <!-- Personal Information Fields -->
 				<fieldset>
 					<legend class="text-white"> Package Order Form </legend>
