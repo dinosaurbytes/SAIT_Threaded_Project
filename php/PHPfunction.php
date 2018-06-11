@@ -13,9 +13,9 @@ function sendemail()
     </head>
     <body>
       <p>Here are the customer message!</p>
-      <p>Customer Name:'.$name.'</p>
-      <p>Contact phone number:'.$phone.'</p>
-      <p>Contact email:'.$from.'</p>
+      <p>Name: &emsp;'.$name.'</p>
+      <p>Phone: &emsp;'.$phone.'</p>
+      <p>Email: &emsp;'.$from.'</p>
       <p>Message: '.trim($_POST["Message"]).'</p>
     </body>
     </html>
@@ -27,17 +27,25 @@ function sendemail()
   $mail->isSMTP();
   $mail->SMTPAuth=true;
   $mail->SMTPSecure='ssl';
-  $mail->Host='smtp.travelexperts.com';
+  $mail->Host='smtp.gmail.com';
   $mail->Port='465';
   $mail->isHtml();
-  $mail->Username='noreply@travelexperts.com';
-  $mail->Password='123456';
-  $mail->SetFrom($from);
+  $mail->Username='lingyanlly2013@gmail.com';
+  $mail->Password='sait123456';
+  $mail->SetFrom($from,$name);
   $mail->Subject='Customer Message';
   $mail->Body=$message;
-  $mail->AddAddress('grpagent@travelexperts.com');
+  $mail->AddAddress('lingyanlly@hotmail.com');
   //send email
   $mail->Send();
+  if(!$mail->send()) 
+  {
+  	return false;
+  } 
+  else 
+  {
+    return ture;
+  }
 }
 
 
@@ -60,6 +68,7 @@ function showAgency()
         $city=$row["AgncyCity"];
         $postal=$row["AgncyPostal"];
         $phone=$row["AgncyPhone"];
+        $adr=$row["AgncyAddress"];
     //output data of each agency
         $str="<section>
         <div class='row'>
