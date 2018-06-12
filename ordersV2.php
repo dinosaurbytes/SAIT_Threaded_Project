@@ -58,13 +58,6 @@ Page created by Jason McIntyre
 						$goodToGo =false;
 					}
 				}
-				if (!empty($_POST['password'])&&!empty($_POST['cPassword']))
-				{
-					if ($_POST['password']!=$_POST['cPassword'])
-					{
-						$cPassErr ='Passwords do not match';
-						$goodToGo=false;
-					}
 				}
 			}
 		?>
@@ -283,14 +276,7 @@ Page created by Jason McIntyre
 </div>
 </section>
 		<?php include "php/footer.php"?>
-	<script type="text/javascript">
-			var register_array=document.getElementById("register_form").elements;
-				for (i=0;i<register_array.length; i++)
-				{	var el=register_array[i];
-					if (el.tagName=='INPUT' || el.tagName=='SELECT')
-						el.setAttribute('onblur', "hideMessage(this)");
-				}
-	</script>
+
 <!-- Javascript files -->
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
