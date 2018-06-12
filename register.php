@@ -1,7 +1,8 @@
 <!--
-Register Page for SAIT Threaded Proejct
-Page created by Brian Liang
- -->
+Register Page
+Author: Brian Liang
+Created: 2018-06
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -122,7 +123,7 @@ Page created by Brian Liang
 					<span class='text-danger'><?php echo $cPassErr; ?></span>
 				</fieldset>
 
-				<!-- Personal Information Field -->
+				<!-- Personal Information Fields -->
 				<fieldset>
 					<legend class="text-white"> Personal Information </legend>
 					<div class='row row-buffer'>
@@ -204,7 +205,7 @@ Page created by Brian Liang
 											<div class="input-group-prepend">
 													<span class="input-group-text span-width-register">Postal Code:</span>
 											</div>
-												<input type="text" class="form-control" placeholder="Postal Code" name="CustPostal" onfocus="showMessage('Must match the pattern: A1A1A1',this)" maxlength="7" value="<?php if(isset($_POST['CustPostal'])) echo $_POST['CustPostal']; ?>">
+												<input type="text" class="form-control" placeholder="Postal Code" name="CustPostal" onfocus="showMessage('Must match the pattern: T2J 3V4',this)" maxlength="7" value="<?php if(isset($_POST['CustPostal'])) echo $_POST['CustPostal']; ?>">
 										</div>
 						</div>
 						<div class='col-sm-6' id='CustPostal' style='visibility: hidden'></div>
@@ -216,7 +217,7 @@ Page created by Brian Liang
            						<div class="input-group-prepend">
               						<span class="input-group-text span-width-register">Home Phone Number:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Home Phone Number" name="CustHomePhone" onfocus="showMessage('Must match the pattern: 4034034444',this)" maxlength="10" value="<?php if(isset($_POST['CustHomePhone'])) echo $_POST['CustHomePhone']; ?>">
+            						<input type="text" class="form-control" placeholder="Home Phone Number" name="CustHomePhone" onfocus="showMessage('Must match the pattern: 403 403 4444',this)" maxlength="12" value="<?php if(isset($_POST['CustHomePhone'])) echo $_POST['CustHomePhone']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='CustHomePhone' style='visibility: hidden'></div>

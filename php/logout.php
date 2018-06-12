@@ -1,3 +1,10 @@
+<!--
+Logout page script
+Author: Brian
+Created: 2018-06
+-->
+
+<!-- Closes the user session -->
 <?php
 SESSION_START();
 

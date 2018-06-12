@@ -60,7 +60,7 @@ Last Updated:2018-06-07
     	}
     	?>
 
-    	<form action="<?php if(isset($_SESSION['Username'])) echo 'orders.php'; else echo 'login.php'; ?>" method="POST" id="packageForm">
+    	<form action="<?php if(isset($_SESSION['Username'])) echo 'ordersV2.php'; else echo 'login.php'; ?>" method="POST" id="packageForm">
   		  <table id="packageTable" style="width:100%" class="table table-hover table-borderless text-center">
     			<tr>
             <th>Package Name</th>
@@ -68,7 +68,7 @@ Last Updated:2018-06-07
             <th>End date</th>
             <th>Description</th>
             <th>Base Price</th>
-            <th>Agency Commission</th>
+            
             <th>Products</th>
             <th>Book</th>
           </tr>
@@ -104,7 +104,7 @@ Last Updated:2018-06-07
                         <td>$endDate</td>
                         <td>$temp->description</td>
                         <td>\$$basePrice</td>
-                        <td>\$$agencyCommission</td>
+                        
                         <td>$products</td>
                         <td><button type='submit' name='button".$i."' value=$i class='btn btn-success' ";
                 //turn the button disabled if the start date has passed

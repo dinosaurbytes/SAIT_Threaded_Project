@@ -1,26 +1,17 @@
 /*
-I'm still not too sure about the file heading format. If you guys have any ideas, please feel free to 
-modify this heading. Also go ahead and put your js functions on this file!
-
-
+Javascript file where functions are defined for SAIT Project
 
 Author: Fantastic 4 (Jason, Brian, Lindsay, Sunghyun)
 Description: this is where we define Custom javascript functions
 Created: 2018-06-05
-
-
 */
 
 
 
-
+//=======Sunghyun Lee=====================================================================================
+//Display rows containing the searched item while hiding all others 
 function display_destination() 
 {
-  /**
-    This function will only display row of the searched destination.
-    Author: Sunghyun Lee
-  */
-
   // Declare variables
   var myInput = document.getElementById("searchInput");
   var upperInputValue= myInput.value.toUpperCase();
@@ -47,9 +38,8 @@ function display_destination()
 }
 
 
-//Purpose: OOSD Threaded Project Phase 1
-//Author: Lindsay
-//Date:Jun 05,2018
+
+//=======Lindsay Li=====================================================================================
 //This function is to validate the message form of the contact page.
 function valContact(myform)
 {   

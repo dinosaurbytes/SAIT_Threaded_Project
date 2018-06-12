@@ -22,7 +22,7 @@ color: grey;
   
 }
 
-/* Brian Lian */
+/* Brian Liang */
 
 .row-buffer{
   margin-top:10px;
@@ -76,4 +76,12 @@ color: grey;
 	display: block;
 	width: 100%;
 	height: 400px;
+}
+
+@media(max-width:991px)
+{
+  .city .overlay
+  {
+    height: 100%;
+  }
 }

@@ -1,12 +1,13 @@
 <!--
 Package Order Form Page for SAIT Threaded Proejct
-Page created by Brian Liang
+Page created by Jason McIntyre
  -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Package Order Form</title>
+	<!-- Website responsive sizing for various display screen size -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
@@ -29,46 +30,43 @@ Page created by Brian Liang
 </head>
 <body>
 	<?php
-		$userErr=$passErr=$cPassErr=$CustFirstNameErr=$CustLastNameErr=$addErr=$CustCityErr=$CustPostalErr='';
+		$CustFirstNameErr=$CustLastNameErr=$addErr=$CustCityErr=$CustPostalErr='';
 		if (isset($_POST['submit']))
 		{
 			$inputs=array(
-				// 'username'=>'userErr',
-				// 'password'=>'passErr',
-				// 'cPassword'=>'cPassErr',
 				'CustFirstName'=>'CustFirstNameErr',
 				'CustLastName' => 'CustLastNameErr',
 				'CustAddress' => 'addErr',
 				'CustCity' =>'CustCityErr',
 				'CustPostal' => 'CustPostalErr'
 				);
-			$goodToGo = true;
-			foreach ($inputs as $name => $err)
-			{
-				if (empty($_POST[$name]))
+				$goodToGo = true;
+				foreach ($inputs as $name => $err)
 				{
-					$$err = "*empty";
-					$goodToGo =false;
+					if (empty($_POST[$name]))
+					{
+						$$err = "*empty";
+						$goodToGo =false;
+					}
+				}
+				if (!empty($_POST['CustPostal']))
+				{
+					$reg = "/^[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d$/";
+					if(!preg_match($reg,trim($_POST['CustPostal'])))
+					{
+						$CustPostalErr = 'Postal Code pattern is wrong';
+						$goodToGo =false;
+					}
+				}
+				if (!empty($_POST['password'])&&!empty($_POST['cPassword']))
+				{
+					if ($_POST['password']!=$_POST['cPassword'])
+					{
+						$cPassErr ='Passwords do not match';
+						$goodToGo=false;
+					}
 				}
 			}
-			if (!empty($_POST['CustPostal']))
-			{
-				$reg = "/^[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d$/";
-				if(!preg_match($reg,trim($_POST['CustPostal'])))
-				{
-					$CustPostalErr = 'Postal Code pattern is wrong';
-					$goodToGo =false;
-				}
-			}
-			if (!empty($_POST['password'])&&!empty($_POST['cPassword']))
-			{
-				if ($_POST['password']!=$_POST['cPassword'])
-				{
-					$cPassErr ='Passwords do not match';
-					$goodToGo=false;
-				}
-			}
-		}
 		?>
 <!-- Header php file -->
 		<?php include "php/header.php"?>
@@ -79,11 +77,9 @@ Page created by Brian Liang
 		<div class="row">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-9">
-  <!--  	<form action="<?php //echo $_SERVER["PHP_SELF"];?>" method="POST" id="register_form" >
--->
-  <form action="insert.php" method="post" id="register_form">
-<!-- Personal Information Field -->
-
+<!-- Calling on insert.php file to connect to the Travelexperts Database and submit data to it. -->
+  <form action="insert.php", method="post" id="register_form">
+<!-- Personal Information Fields -->
 				<fieldset>
 					<legend class="text-white"> Package Order Form </legend>
 <!-- Customer Enters First Name -->
@@ -106,7 +102,7 @@ Page created by Brian Liang
            						<div class="input-group-prepend">
               						<span class="input-group-text span-width-register">Last name:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Doe" name="CustLastName" maxlength="20" value="<?php if(isset($_POST['CustLastName'])) echo $_POST['CustLastName']; ?>">
+            						<input type="text" class="form-control" placeholder="Doe" name="CustLastName" onfocus="showMessage('Last name',this)" maxlength="20" value="<?php if(isset($_POST['CustLastName'])) echo $_POST['CustLastName']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='CustLastName' style='visibility: hidden'></div>
@@ -132,7 +128,7 @@ Page created by Brian Liang
            						<div class="input-group-prepend">
               						<span class="input-group-text span-width-register">City:</span>
            						</div>
-            						<input type="text" class="form-control" placeholder="Calgary" name="CustCity" value="<?php if(isset($_POST['CustCity'])) echo $_POST['CustCity']; ?>">
+            						<input type="text" class="form-control" placeholder="Calgary" name="CustCity" onfocus="showMessage('City',this)"value="<?php if(isset($_POST['CustCity'])) echo $_POST['CustCity']; ?>">
           					</div>
 						</div>
 						<div class='col-sm-6' id='CustCity' style='visibility: hidden'></div>
@@ -266,7 +262,7 @@ Page created by Brian Liang
 					</div>
 						<div class='col-sm-6' id='$TripTypeId' style='visibility: hidden'></div>
 				</div>
-
+	<!-- Submit and Reset Buttons -->
 				<div class='col-sm-6' style='text-align:center'>
 					<button class='btn btn-success' type="submit" name='button1' value="Submit" > Send </button>
 					<button class='btn btn-primary' type="reset" value="Reset" onclick="return confirm('Do you want to reset?')">Reset</button>
@@ -274,34 +270,12 @@ Page created by Brian Liang
 
 				</fieldset>
 </form>
-	<!-- Submit and Reset Buttons -->
 				<div class='row row-buffer'>
-
 						<div class='col-sm-6'>
-						<?php
-						require_once("php/customerRegister.php");
 
-						if(isset($_POST["submit"]))
-						{
-						customerRegister();
-						}
-						// }
-
-							// echo "
-							// <div class='alert alert-success alert-dismissible fade show'>
-			  			// 		<button type='button' class='close' data-dismiss='alert'>&times;</button>
-			  			// 			<strong>Success:</strong> Your request has been processed.
-			  			// 	</div>";
-
-							// else echo "
-							// <div class='alert alert-danger alert-dismissible fade show'>
-			  			// 		<button type='button' class='close' data-dismiss='alert'>&times;</button>
-			  			// 			<strong>Failed:</strong> Your request cannot be processed.
-			  			// 	</div>";
-			  			?>
 						</div>
 					</div>
-			</form>
+
 		</div>
 			<div class="col-sm-2"></div>
 		</div>

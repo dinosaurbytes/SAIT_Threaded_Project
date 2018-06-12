@@ -1,36 +1,31 @@
-
+<!--
+Author: Jason McIntyre
+Created: 2018-06-08
+Last Modified: 2018-06-08
+<-->
 
 
 <div id="demo" class="carousel slide" data-ride="carousel" style='height:400px;'>
 
-  <!-- Indicators 
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  -->
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="image/2.jpg" class='image'>
       <div class="carousel-caption" style="top:30%;bottom:auto">
-        <h3>Take Your Dream Vacation</h3>
-        <p>Is this working?</p>
+        <h2>Take Your Dream Vacation</h3>
+        
       </div>
     </div>
     <div class="carousel-item">
       <img src="image/maldive.jpg" class='image'>
       <div class="carousel-caption" style="top:30%;bottom:auto">
-        <h3>We Work With All Budgets</h3>
-        <p>cool?</p>
+        <h2>We Work With All Budgets</h3>
       </div>
     </div>
     <div class="carousel-item">
       <img src="image/bgimg.jpeg" class='image'>
       <div class="carousel-caption" style="top:30%;bottom:auto">
-        <h3Group & Individual Getaways</h3>
-        <p>cool?</p>
+        <h2>Group & Individual Getaways</h3>
       </div>
     </div>
   </div>
