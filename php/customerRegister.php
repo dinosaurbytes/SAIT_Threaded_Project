@@ -1,3 +1,9 @@
+<!--
+Register Page Script
+Author: Brian
+Created: 2018-06
+-->
+
 <!-- Script to insert customer information from the register form to the customer table in the SQL database -->
 
 <?php
