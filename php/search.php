@@ -15,7 +15,7 @@ Last Modified: 2018-06-08
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Search:</span>
             </div>
-            <input type="text" class="form-control" placeholder="desitnation, product, etc." name='searchField'>
+            <input type="text" class="form-control" placeholder="destination, product, etc." name='searchField'>
           </div>
         </div>
         <div class='col-sm-3'>
