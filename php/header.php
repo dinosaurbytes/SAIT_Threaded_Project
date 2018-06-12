@@ -1,3 +1,9 @@
+<!--
+Header File
+Author: Brian Liang
+Created: 2018-06
+-->
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
   <a class="navbar-brand" href="index.php">Travel Experts</a>

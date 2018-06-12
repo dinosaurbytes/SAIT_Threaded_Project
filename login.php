@@ -1,7 +1,8 @@
 <!--
-Login Page for SAIT Threaded Proejct
-Page created by Brian Liang
- -->
+Login Page
+Author: Brian Liang
+Created: 2018-06
+-->
 
 <?php session_start();?>
 

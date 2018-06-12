@@ -1,5 +1,12 @@
+<!--
+Login Page Validate Script
+Author: Brian Liang
+Created: 2018-06
+-->
+
 <?php
 
+// coverts text form into an array
 function passwordValidate(){
   // Client side array (Login Screen Username/Password Input)
   $loginArray = array();
@@ -18,7 +25,7 @@ function passwordValidate(){
   //Connect To database
   $link = mysqli_connect("localhost", "root", "", "travelexperts") or die("Connection Error: " . mysqli_connect_error());
 
-  //Create an array for usernames and passwords
+  //Create an array for usernames and passwords, validates that username and password matches
   $sql = "select Username, Password from customers";
   $result = mysqli_query($link, $sql);
   $datas = array();
