@@ -46,20 +46,27 @@ function display_destination()
   // end of for loop
 }
 
-//------This function is to validate the message form of contact page.
+
+//Purpose: OOSD Threaded Project Phase 1
+//Author: Lindsay
+//Date:Jun 05,2018
+//This function is to validate the message form of the contact page.
 function valContact(myform)
-{   var str;
-    var patt;
-    var result;
-    var error;
+{   
+  var str; 
+  var patt; 
+  var result; 
+  var error;
   for (var x = 0; x < myform.length; x++)
   {
+    //check whether the input fields are all filled out; if dosen't, show the error message.
     if (myform[x].value == "" || null)
     {
       error= 'Note: '+ myform[x].name + ' is required.';
       document.getElementById('error').innerHTML=error;
       return false;
     }
+    //format the value of the field; if it is not a valid email address, show an error message.
     else if (myform[x].name == "Email")
     {
       str=myform[x].value;
@@ -67,11 +74,12 @@ function valContact(myform)
             result=patt.test(str.toLowerCase());
         if (!result)
       {
-        error="Note: Please enter a correct email address.";
+        error="Note: Please enter a valid email address.";
         document.getElementById('error').innerHTML=error;
         return false;
       }
     }
+    //format the value of the field; if it is not a valid phone number, show an error message.
     else if (myform[x].name == "Phone")
     {
       str=(myform[x].value).replace(/\D/g, "");

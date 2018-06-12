@@ -1,3 +1,7 @@
+<!--Purpose: OOSD Threaded Project Phase 1
+  Author: Lindsay
+  Date:Jun 05,2018
+-->
 <?php
 // Start the session
 session_start();
@@ -7,7 +11,8 @@ session_start();
      without clicking the submit button. Sending the data to a different page can solve the issue.
       Use session to transfer message to the contact page.
 */
-		include "PHPfunction.php";
+    //when the submit button of the message form on the contact page is set, this sendemail function will be executed.
+    include "PHPfunction.php";
     if (isset($_POST["submit"]))
     {
       $result=sendemail();
